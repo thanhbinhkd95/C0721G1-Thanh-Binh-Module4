@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Catelory</title>
+</head>
+<body>
+    <h1>Edit Catelory</h1>
+    <form th:action="@{/catelory/catelory-edit/edit}" th:object="${catelory}" method="post">
+        <input type="hidden" th:field="*{idCatelory}">
+        <table border="1">
+            <tr>
+                <td>Type Catelory :</td>
+                <td><input th:field="*{typeCatelory}" type="text"></td>
+                <td>
+                    <input type="submit" value="Save">
+                </td>
+            </tr>
+            
+           
+        </table>
+    </form>
+</body>
+</html>

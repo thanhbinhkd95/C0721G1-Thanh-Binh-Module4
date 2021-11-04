@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Catelory</title>
+</head>
+<body>
+  <h1>Catelory List</h1>
+  <h2><a th:href="@{/catelory/catelory-create}">Create Catelory</a></h2>
+  <h4><a th:href="@{/}">Back to Blog List</a></h4>
+  <table border="1">
+      <tr>
+        <th>No#</th>
+        <th>ID</th>
+        <th>Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+      </tr>
+      <tr th:each="cateObj,cateLoop : ${caleloryList}">
+          <td th:text="${cateLoop.index + 1}"></td>
+          <td th:text="${cateObj.idCatelory}"></td>
+          <td th:text="${cateObj.typeCatelory}"></td>
+          <td><a th:href="@{/catelory-edit/edit(id=${cateObj.idCatelory})}">Edit</a></td>
+          <td><a th:href="@{/catelory-delete/delete(id=${cateObj.idCatelory})}">Delete</a></td>
+      </tr>
+  </table>
+</body>
+</html>
