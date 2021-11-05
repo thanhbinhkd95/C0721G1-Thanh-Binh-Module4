@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+</head>
+<body>
+    <h1>User Information</h1>
+    <h2><a th:href="@{/create-user}">Create User</a></h2>
+    <span style="color: red" th:text="${message}"></span>
+    <table border="1">
+        <tr>
+            <th>No#</th>
+            <th>ID</th>
+            <th>Fist Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Age</th>
+            <th>Email</th>
+        </tr>
+        <tr th:each="user,loop : ${userList}">
+            <th th:text="${loop.index + 1}"></th>
+            <th th:text="${user.id}"></th>
+            <th th:text="${user.fistName}"></th>
+            <th th:text="${user.lastName}"></th>
+            <th th:text="${user.phoneNumber}"></th>
+            <th th:text="${user.age}"></th>
+            <th th:text="${user.email}"></th>
+        </tr>
+    </table>
+
+</body>
+</html>
