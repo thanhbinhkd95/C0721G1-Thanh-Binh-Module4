@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="count-view.main" target="1.8" />
+      <module name="count-view.test" target="1.8" />
+      <module name="save-user.main" target="1.8" />
+      <module name="save-user.test" target="1.8" />
+      <module name="thuc_hanh.shoping-cart.main" target="1.8" />
+      <module name="thuc_hanh.shoping-cart.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
