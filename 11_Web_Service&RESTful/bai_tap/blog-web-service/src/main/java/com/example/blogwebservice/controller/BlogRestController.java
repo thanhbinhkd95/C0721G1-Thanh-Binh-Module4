@@ -62,4 +62,31 @@ public class BlogRestController {
         }
         return new ResponseEntity<>(category,HttpStatus.OK);
     }
+
+//phân trang bằng web service
+    //page: số trang hiện tại
+    // size: số record trả về
+    //PageRequest.of() trả về 1 đối tượng Pageable
+    //Bản chất PageRequest.of chính là Pagable, với tham số đơn giản hơn.
+    @GetMapping("/blog/getPage")
+    public ResponseEntity<Page<Blog>> getPage( @RequestParam int page,int size) {
+        Page<Blog> blogList = iBlogService.findAll(PageRequest.of(page,size));
+        return   new ResponseEntity<>(blogList, HttpStatus.OK);
+    }
+
+
+
+    //tìm kiếm bằng web service
+    @GetMapping("/blog/search/{idCategory}/{title}/{page}/{size}")
+    public ResponseEntity<Page<Blog>> search(@PathVariable("idCategory") String id,
+                                             @PathVariable("title") String title,
+                                             @PathVariable("page") int page,
+                                             @PathVariable("size") int size){
+        Page<Blog> blogList = iBlogService.findAll(PageRequest.of(page,size),title,id);
+        if (blogList.getSize()==0) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return   new ResponseEntity<>(blogList, HttpStatus.OK);
+
+    }
 }
