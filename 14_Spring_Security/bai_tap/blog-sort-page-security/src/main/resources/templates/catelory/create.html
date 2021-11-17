@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Catelory</title>
+</head>
+<body>
+<h1>Create Catelory</h1>
+    <form th:object="${catelory}" method="post" th:action="@{/catelory/catelory-create/create}">
+       <table>
+           <tr>
+               <th>Name:</th>
+               <th><input type="text" th:field="*{typeCatelory}"/></th>
+               <th><input type="submit" value="Save"></th>
+           </tr>
+       </table>
+    </form>
+</body>
+</html>
