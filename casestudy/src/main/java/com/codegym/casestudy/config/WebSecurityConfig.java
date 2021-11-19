@@ -1,6 +1,7 @@
 package com.codegym.casestudy.config;
 
 import com.codegym.casestudy.service.user.MyUserDetailService;
+import com.codegym.casestudy.service.user.MyUserSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,15 +19,15 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private MyUserDetailService myUserDetailService;
-
+    private MyUserSecurityService myUserSecurityService;
+    @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(myUserDetailService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(myUserSecurityService).passwordEncoder(passwordEncoder());
     }
 
     @Override
