@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/layout :: head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="~{layout/layout :: header}"></div>
+
+<div class="container-fluid text-center my-5">
+    <h1 style="color: #cbbe73">ROOMS & SUITES</h1>
+
+    <p>All 198 rooms & suites have polished timber floors, natural fabrics, comfortable cane <br>
+        furniture, plantation style shutters and ceiling fans. Each room also has its own balcony or <br>
+        spacious terrace providing complete privacy and with a superb view of the ocean, the <br>
+        tropical garden or the freshwater swimming lagoon pool.</p>
+</div>
+
+<div class="container-fluid mt mt-2">
+    <div class="card-group">
+        <div class="card">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Deluxe-double-bed-F-370x239.jpg"
+                 class="img-fluid wp-post-image" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Room</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Garden-Deluxe-twin-bed-F-370x239.jpg"
+                 class="img-fluid wp-post-image" alt="">
+            <div class="card-body">
+                <h5 class="card-title">House</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
+                 class="img-fluid wp-post-image" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Villa</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center text-white" style="background-color: #0F574B">
+    Khu nghỉ dưỡng Furama
+</div>
+
+<div th:replace="~{layout/layout :: library}"></div>
+</body>
+</html>
